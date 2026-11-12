@@ -1,0 +1,11 @@
+sale_id,sale_date,product,region,quantity,unit_price
+101,01-10-2026,Cocoa,Asia,100,500
+102,02-10-2026,Coffee,Europe,50,600
+103,03-10-2026,Palm Oil,Asia,80,400
+104,04-10-2026,Cocoa,Europe,120,500
+105,05-10-2026,Coffee,Asia,75,600
+106,06-10-2026,Palm Oil,Africa,90,400
+107,07-10-2026,Cocoa,Africa,60,500
+108,08-10-2026,Coffee,Europe,110,600
+109,09-10-2026,Palm Oil,Asia,150,400
+110,10-10-2026,Cocoa,Asia,200,500

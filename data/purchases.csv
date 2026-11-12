@@ -1,0 +1,9 @@
+purchase_id,purchase_date,supplier,product,quantity,unit_price
+201,01-10-2026,Supplier A,Cocoa,200,400
+202,02-10-2026,Supplier B,Coffee,100,450
+203,03-10-2026,Supplier C,Palm Oil,150,350
+204,04-10-2026,Supplier A,Cocoa,300,400
+205,05-10-2026,Supplier B,Coffee,180,450
+206,06-10-2026,Supplier C,Palm Oil,220,350
+207,07-10-2026,Supplier A,Cocoa,120,400
+208,08-10-2026,Supplier B,Coffee,250,450
