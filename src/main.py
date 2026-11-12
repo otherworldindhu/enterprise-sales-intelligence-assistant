@@ -144,3 +144,12 @@ product_region_report = (
 
 print("\nPRODUCT AND REGION REVENUE REPORT")
 print(product_region_report)
+
+# Sort product-region revenue from highest to lowest
+sorted_product_region = product_region_report.sort_values(
+    by="revenue",
+    ascending=False
+)
+
+print("\nPRODUCT-REGION REVENUE RANKING")
+print(sorted_product_region)
