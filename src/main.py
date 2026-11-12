@@ -153,3 +153,11 @@ sorted_product_region = product_region_report.sort_values(
 
 print("\nPRODUCT-REGION REVENUE RANKING")
 print(sorted_product_region)
+
+# Filter sales transactions with revenue greater than 50000
+high_revenue_sales = sales_df[
+    sales_df["revenue"] > 50000
+]
+
+print("\nHIGH REVENUE SALES")
+print(high_revenue_sales)
