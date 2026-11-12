@@ -135,3 +135,12 @@ product_region_revenue = (
 print("\nREVENUE BY PRODUCT AND REGION")
 print(product_region_revenue)
 
+# Convert grouped result into a regular DataFrame
+product_region_report = (
+    sales_df.groupby(["product", "region"])["revenue"]
+    .sum()
+    .reset_index()
+)
+
+print("\nPRODUCT AND REGION REVENUE REPORT")
+print(product_region_report)
