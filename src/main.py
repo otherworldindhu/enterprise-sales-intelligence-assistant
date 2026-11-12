@@ -114,3 +114,15 @@ product_revenue = sales_df.groupby("product")["revenue"].sum()
 
 print("\nREVENUE BY PRODUCT")
 print(product_revenue)
+
+# Calculate revenue by region
+region_revenue = sales_df.groupby("region")["revenue"].sum()
+
+print("\nREVENUE BY REGION")
+print(region_revenue)
+
+# Revenue by product
+sales_df.groupby("product")["revenue"].sum()
+
+# Revenue by region
+sales_df.groupby("region")["revenue"].sum()
