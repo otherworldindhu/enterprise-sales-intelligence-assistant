@@ -108,3 +108,9 @@ total_revenue = sales_df["revenue"].sum()
 
 print("\nTOTAL SALES REVENUE")
 print(total_revenue)
+
+# Calculate revenue by product
+product_revenue = sales_df.groupby("product")["revenue"].sum()
+
+print("\nREVENUE BY PRODUCT")
+print(product_revenue)
