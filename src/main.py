@@ -161,3 +161,12 @@ high_revenue_sales = sales_df[
 
 print("\nHIGH REVENUE SALES")
 print(high_revenue_sales)
+
+# Filter high-revenue sales in Asia
+asia_high_revenue = sales_df[
+    (sales_df["revenue"] > 50000) &
+    (sales_df["region"] == "Asia")
+]
+
+print("\nHIGH REVENUE SALES IN ASIA")
+print(asia_high_revenue)
