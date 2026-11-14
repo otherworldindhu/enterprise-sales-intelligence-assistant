@@ -187,3 +187,13 @@ non_africa_sales = sales_df[
 
 print("\nSALES EXCLUDING AFRICA")
 print(non_africa_sales)
+
+# Filter sales from selected regions using isin()
+selected_regions = ["Asia", "Europe"]
+
+selected_region_sales = sales_df[
+    sales_df["region"].isin(selected_regions)
+]
+
+print("\nSALES FROM SELECTED REGIONS")
+print(selected_region_sales)
