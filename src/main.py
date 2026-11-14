@@ -205,3 +205,11 @@ medium_revenue_sales = sales_df[
 
 print("\nSALES WITH REVENUE BETWEEN 40000 AND 60000")
 print(medium_revenue_sales)
+
+# Select specific columns for the sales report
+sales_summary = sales_df[
+    ["product", "region", "revenue"]
+]
+
+print("\nSALES SUMMARY REPORT")
+print(sales_summary)
