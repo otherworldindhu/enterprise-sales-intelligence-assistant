@@ -179,3 +179,11 @@ asia_europe_sales = sales_df[
 
 print("\nSALES FROM ASIA OR EUROPE")
 print(asia_europe_sales)
+
+# Filter sales excluding Africa
+non_africa_sales = sales_df[
+    ~(sales_df["region"] == "Africa")
+]
+
+print("\nSALES EXCLUDING AFRICA")
+print(non_africa_sales)
