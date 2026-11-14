@@ -197,3 +197,11 @@ selected_region_sales = sales_df[
 
 print("\nSALES FROM SELECTED REGIONS")
 print(selected_region_sales)
+
+# Filter sales within a revenue range
+medium_revenue_sales = sales_df[
+    sales_df["revenue"].between(40000, 60000)
+]
+
+print("\nSALES WITH REVENUE BETWEEN 40000 AND 60000")
+print(medium_revenue_sales)
