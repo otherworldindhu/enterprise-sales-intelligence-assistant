@@ -170,3 +170,12 @@ asia_high_revenue = sales_df[
 
 print("\nHIGH REVENUE SALES IN ASIA")
 print(asia_high_revenue)
+
+# Filter sales from Asia or Europe
+asia_europe_sales = sales_df[
+    (sales_df["region"] == "Asia") |
+    (sales_df["region"] == "Europe")
+]
+
+print("\nSALES FROM ASIA OR EUROPE")
+print(asia_europe_sales)
