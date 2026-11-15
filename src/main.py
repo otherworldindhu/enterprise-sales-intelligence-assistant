@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 def calculate_total_revenue(df):
     total = (df["quantity"] * df["unit_price"]).sum()
@@ -318,6 +319,20 @@ regional_report = analyze_sales_by_region(sales_df)
 print("\nREGIONAL SALES REPORT")
 print(regional_report)
 
+
+plt.figure(figsize=(8, 5))
+
+plt.bar(
+    product_sales_report["product"],
+    product_sales_report["total_revenue"]
+)
+
+plt.title("Revenue by Product")
+plt.xlabel("Product")
+plt.ylabel("Revenue")
+plt.tight_layout()
+
+plt.show()
 
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
