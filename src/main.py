@@ -1,5 +1,7 @@
 import pandas as pd
-
+def calculate_total_revenue(df):
+    total = (df["quantity"] * df["unit_price"]).sum()
+    return total
 # Read sales data
 sales_df = pd.read_csv("data/sales.csv")
 
@@ -259,7 +261,7 @@ sorted_profit_summary = product_financial_summary.sort_values(
 print("\nPRODUCTS RANKED BY GROSS PROFIT")
 print(sorted_profit_summary)
 
-total_revenue = sales_df["revenue"].sum()
+total_revenue = calculate_total_revenue(sales_df)
 
 total_purchase_cost = purchases_df["purchase_cost"].sum()
 
@@ -351,3 +353,4 @@ print(product_reconciliation)
 
 print("\nRECONCILIATION STATUS")
 print(product_reconciliation["_merge"].value_counts())
+
