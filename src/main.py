@@ -11,9 +11,10 @@ from analysis import (
 from reporting import generate_sales_report
 from visualization import generate_sales_charts
 from data_loader import load_business_data
+from data_loader import load_business_data, validate_business_data
 # Read sales data
 sales_df, purchases_df = load_business_data()
-
+validate_business_data(sales_df, purchases_df)
 # Display sales data
 print("SALES DATA")
 print(sales_df)
