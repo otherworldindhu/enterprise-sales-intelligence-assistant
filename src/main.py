@@ -284,3 +284,10 @@ product_financial_summary["gross_profit_margin"] = (
 
 print("\nPRODUCT PROFIT MARGIN")
 print(product_financial_summary)
+
+product_financial_summary["gross_profit_margin"] = (
+    product_financial_summary["gross_profit_margin"].round(2)
+)
+
+print("\nPRODUCT PROFIT MARGIN")
+print(product_financial_summary)
