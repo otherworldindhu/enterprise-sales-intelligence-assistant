@@ -336,3 +336,18 @@ print("\nPRODUCT-LEVEL SUMMARY")
 print(product_summary)
 
 print("Shape:", product_summary.shape)
+
+product_reconciliation = pd.merge(
+    product_sales_summary,
+    product_purchase_summary,
+    on="product",
+    how="outer",
+    indicator=True,
+    validate="one_to_one"
+)
+
+print("\nPRODUCT RECONCILIATION")
+print(product_reconciliation)
+
+print("\nRECONCILIATION STATUS")
+print(product_reconciliation["_merge"].value_counts())
