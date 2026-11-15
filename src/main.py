@@ -333,8 +333,9 @@ plt.xlabel("Product")
 plt.ylabel("Revenue")
 plt.tight_layout()
 
+plt.savefig("product_revenue.png", dpi=300)
 plt.show()
-plt.savefig("product_revenue.png")
+plt.close()
 
 plt.figure(figsize=(8, 5))
 
@@ -348,8 +349,9 @@ plt.xlabel("Region")
 plt.ylabel("Revenue")
 plt.tight_layout()
 
+plt.savefig("regional_revenue.png", dpi=300)
 plt.show()
-plt.savefig("regional_revenue.png")
+plt.close()
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
 ]
@@ -500,6 +502,18 @@ html_report = f"""
     <p><strong>Top Product:</strong> {highest_revenue_product["product"]}</p>
     <p><strong>Top Region:</strong> {highest_revenue_region["region"]}</p>
     
+        <h2>Revenue Visualisations</h2>
+
+    <h3>Revenue by Product</h3>
+    <img src="../product_revenue.png"
+         alt="Revenue by Product"
+         width="600">
+
+    <h3>Revenue by Region</h3>
+    <img src="../regional_revenue.png"
+         alt="Revenue by Region"
+         width="600">
+         
     <h2>Product Sales Performance</h2>
     {product_sales_report.to_html(index=False)}
 
