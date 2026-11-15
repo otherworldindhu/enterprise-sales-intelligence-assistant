@@ -2,6 +2,12 @@ import pandas as pd
 def calculate_total_revenue(df):
     total = (df["quantity"] * df["unit_price"]).sum()
     return total
+
+def calculate_total_purchase_cost(df):
+    total = (df["quantity"] * df["unit_price"]).sum()
+    return total
+
+
 # Read sales data
 sales_df = pd.read_csv("data/sales.csv")
 
@@ -263,7 +269,7 @@ print(sorted_profit_summary)
 
 total_revenue = calculate_total_revenue(sales_df)
 
-total_purchase_cost = purchases_df["purchase_cost"].sum()
+total_purchase_cost = calculate_total_purchase_cost(purchases_df)
 
 total_gross_profit = total_revenue - total_purchase_cost
 
