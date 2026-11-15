@@ -250,3 +250,11 @@ product_financial_summary["gross_profit"] = (
 
 print("\nPRODUCT PROFIT SUMMARY")
 print(product_financial_summary)
+
+sorted_profit_summary = product_financial_summary.sort_values(
+    by="gross_profit",
+    ascending=False
+)
+
+print("\nPRODUCTS RANKED BY GROSS PROFIT")
+print(sorted_profit_summary)
