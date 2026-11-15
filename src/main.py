@@ -334,6 +334,20 @@ plt.tight_layout()
 
 plt.show()
 
+
+plt.figure(figsize=(8, 5))
+
+plt.bar(
+    regional_report["region"],
+    regional_report["total_revenue"]
+)
+
+plt.title("Revenue by Region")
+plt.xlabel("Region")
+plt.ylabel("Revenue")
+plt.tight_layout()
+
+plt.show()
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
 ]
