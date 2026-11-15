@@ -258,3 +258,14 @@ sorted_profit_summary = product_financial_summary.sort_values(
 
 print("\nPRODUCTS RANKED BY GROSS PROFIT")
 print(sorted_profit_summary)
+
+total_revenue = sales_df["revenue"].sum()
+
+total_purchase_cost = purchases_df["purchase_cost"].sum()
+
+total_gross_profit = total_revenue - total_purchase_cost
+
+print("\nCOMPANY FINANCIAL SUMMARY")
+print("Total Revenue:", total_revenue)
+print("Total Purchase Cost:", total_purchase_cost)
+print("Total Gross Profit:", total_gross_profit)
