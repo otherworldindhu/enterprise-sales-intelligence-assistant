@@ -23,6 +23,13 @@ def analyze_purchases_by_supplier(df):
 
     return supplier_summary
 
+def analyze_sales_by_region(df):
+    region_summary = df.groupby("region").agg(
+        total_quantity=("quantity", "sum"),
+        total_revenue=("revenue", "sum")
+    ).reset_index()
+
+    return region_summary
 
 # Read sales data
 sales_df = pd.read_csv("data/sales.csv")
@@ -306,6 +313,10 @@ supplier_report = analyze_purchases_by_supplier(purchases_df)
 print("\nSUPPLIER PERFORMANCE REPORT")
 print(supplier_report)
 
+regional_report = analyze_sales_by_region(sales_df)
+
+print("\nREGIONAL SALES REPORT")
+print(regional_report)
 
 
 loss_making_products = product_financial_summary[
