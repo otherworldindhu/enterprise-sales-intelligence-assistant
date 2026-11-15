@@ -269,3 +269,10 @@ print("\nCOMPANY FINANCIAL SUMMARY")
 print("Total Revenue:", total_revenue)
 print("Total Purchase Cost:", total_purchase_cost)
 print("Total Gross Profit:", total_gross_profit)
+
+loss_making_products = product_financial_summary[
+    product_financial_summary["gross_profit"] < 0
+]
+
+print("\nLOSS-MAKING PRODUCTS")
+print(loss_making_products)
