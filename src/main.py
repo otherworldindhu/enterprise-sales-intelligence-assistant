@@ -333,7 +333,7 @@ plt.ylabel("Revenue")
 plt.tight_layout()
 
 plt.show()
-
+plt.savefig("product_revenue.png")
 
 plt.figure(figsize=(8, 5))
 
@@ -348,6 +348,7 @@ plt.ylabel("Revenue")
 plt.tight_layout()
 
 plt.show()
+plt.savefig("regional_revenue.png")
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
 ]
