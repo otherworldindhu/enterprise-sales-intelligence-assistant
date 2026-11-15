@@ -213,3 +213,10 @@ sales_summary = sales_df[
 
 print("\nSALES SUMMARY REPORT")
 print(sales_summary)
+
+purchases_df["purchase_cost"] = (
+    purchases_df["quantity"] * purchases_df["unit_price"]
+)
+
+print("\nPURCHASE COST")
+print(purchases_df[["supplier", "product", "purchase_cost"]])
