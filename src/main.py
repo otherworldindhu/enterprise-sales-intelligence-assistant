@@ -435,6 +435,15 @@ print(product_reconciliation["_merge"].value_counts())
 reports_dir = Path("reports")
 reports_dir.mkdir(exist_ok=True)
 
+
+highest_revenue_product = product_sales_report.loc[
+    product_sales_report["total_revenue"].idxmax()
+]
+
+highest_revenue_region = regional_report.loc[
+    regional_report["total_revenue"].idxmax()
+]
+
 html_report = f"""
 <!DOCTYPE html>
 <html>
@@ -483,6 +492,14 @@ html_report = f"""
 <body>
     <h1>Enterprise Sales Intelligence Report</h1>
 
+    <h2>Business Overview</h2>
+
+    <p><strong>Total Revenue:</strong> {total_revenue:,.0f}</p>
+    <p><strong>Total Purchase Cost:</strong> {total_purchase_cost:,.0f}</p>
+    <p><strong>Simplified Gross Profit Estimate:</strong> {total_gross_profit:,.0f}</p>
+    <p><strong>Top Product:</strong> {highest_revenue_product["product"]}</p>
+    <p><strong>Top Region:</strong> {highest_revenue_region["region"]}</p>
+    
     <h2>Product Sales Performance</h2>
     {product_sales_report.to_html(index=False)}
 
