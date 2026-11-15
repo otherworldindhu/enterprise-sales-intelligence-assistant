@@ -291,3 +291,14 @@ product_financial_summary["gross_profit_margin"] = (
 
 print("\nPRODUCT PROFIT MARGIN")
 print(product_financial_summary)
+
+total_gross_profit_margin = (
+    total_gross_profit / total_revenue
+) * 100
+
+total_gross_profit_margin = round(
+    total_gross_profit_margin, 2
+)
+
+print("\nCOMPANY GROSS PROFIT MARGIN")
+print("Overall Margin:", total_gross_profit_margin, "%")
