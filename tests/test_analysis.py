@@ -10,7 +10,9 @@ from analysis import (
     calculate_total_revenue,
     analyze_sales_by_product
 )
+import pytest
 
+from data_loader import validate_business_data
 def test_calculate_total_revenue():
 
     sales_df = pd.DataFrame({
@@ -36,3 +38,25 @@ def test_analyze_sales_by_product():
 
     assert cocoa["total_quantity"] == 40
     assert cocoa["total_revenue"] == 20000
+
+def test_validate_business_data_rejects_missing_sales_column():
+
+    sales_df = pd.DataFrame({
+        "sale_id": [101],
+        "sale_date": ["2026-10-01"],
+        "product": ["Cocoa"],
+        "region": ["Asia"],
+        "quantity": [100]
+    })
+
+    purchases_df = pd.DataFrame({
+        "purchase_id": [201],
+        "purchase_date": ["2026-10-01"],
+        "supplier": ["Supplier A"],
+        "product": ["Cocoa"],
+        "quantity": [200],
+        "unit_price": [400]
+    })
+
+    with pytest.raises(ValueError, match="Sales data is missing columns"):
+        validate_business_data(sales_df, purchases_df)
