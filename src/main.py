@@ -276,3 +276,11 @@ loss_making_products = product_financial_summary[
 
 print("\nLOSS-MAKING PRODUCTS")
 print(loss_making_products)
+
+product_financial_summary["gross_profit_margin"] = (
+    product_financial_summary["gross_profit"]
+    / product_financial_summary["revenue"]
+) * 100
+
+print("\nPRODUCT PROFIT MARGIN")
+print(product_financial_summary)
