@@ -220,3 +220,10 @@ purchases_df["purchase_cost"] = (
 
 print("\nPURCHASE COST")
 print(purchases_df[["supplier", "product", "purchase_cost"]])
+
+supplier_purchase_cost = (
+    purchases_df.groupby("supplier")["purchase_cost"].sum()
+)
+
+print("\nTOTAL PURCHASE COST BY SUPPLIER")
+print(supplier_purchase_cost)
