@@ -9,6 +9,7 @@ from analysis import (
     analyze_sales_by_region
 )
 from reporting import generate_sales_report
+from visualization import generate_sales_charts
 # Read sales data
 sales_df = pd.read_csv("data/sales.csv")
 
@@ -296,38 +297,11 @@ regional_report = analyze_sales_by_region(sales_df)
 print("\nREGIONAL SALES REPORT")
 print(regional_report)
 
-
-plt.figure(figsize=(8, 5))
-
-plt.bar(
-    product_sales_report["product"],
-    product_sales_report["total_revenue"]
+generate_sales_charts(
+    product_sales_report,
+    regional_report
 )
 
-plt.title("Revenue by Product")
-plt.xlabel("Product")
-plt.ylabel("Revenue")
-plt.tight_layout()
-
-plt.savefig("product_revenue.png", dpi=300)
-plt.show()
-plt.close()
-
-plt.figure(figsize=(8, 5))
-
-plt.bar(
-    regional_report["region"],
-    regional_report["total_revenue"]
-)
-
-plt.title("Revenue by Region")
-plt.xlabel("Region")
-plt.ylabel("Revenue")
-plt.tight_layout()
-
-plt.savefig("regional_revenue.png", dpi=300)
-plt.show()
-plt.close()
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
 ]
