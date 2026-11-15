@@ -312,3 +312,27 @@ product_overview = pd.merge(
 
 print("\nPRODUCT OVERVIEW")
 print(product_overview.head())
+
+print("Total merged rows:", len(product_overview))
+print("DataFrame shape:", product_overview.shape)
+
+product_sales_summary = product_revenue.reset_index(
+    name="revenue"
+)
+
+product_purchase_summary = product_purchase_cost.reset_index(
+    name="purchase_cost"
+)
+
+product_summary = pd.merge(
+    product_sales_summary,
+    product_purchase_summary,
+    on="product",
+    how="inner",
+    validate="one_to_one"
+)
+
+print("\nPRODUCT-LEVEL SUMMARY")
+print(product_summary)
+
+print("Shape:", product_summary.shape)
