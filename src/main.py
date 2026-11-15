@@ -234,3 +234,11 @@ product_purchase_cost = (
 
 print("\nTOTAL PURCHASE COST BY PRODUCT")
 print(product_purchase_cost)
+
+product_financial_summary = pd.concat(
+    [product_revenue, product_purchase_cost],
+    axis=1
+)
+
+print("\nPRODUCT FINANCIAL SUMMARY")
+print(product_financial_summary)
