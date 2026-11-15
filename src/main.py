@@ -1,3 +1,4 @@
+from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 def calculate_total_revenue(df):
@@ -430,4 +431,32 @@ print(product_reconciliation)
 
 print("\nRECONCILIATION STATUS")
 print(product_reconciliation["_merge"].value_counts())
+
+reports_dir = Path("reports")
+reports_dir.mkdir(exist_ok=True)
+
+html_report = f"""
+<html>
+<head>
+    <title>Enterprise Sales Intelligence Report</title>
+</head>
+<body>
+    <h1>Enterprise Sales Intelligence Report</h1>
+
+    <h2>Product Sales Performance</h2>
+    {product_sales_report.to_html(index=False)}
+
+    <h2>Regional Sales Performance</h2>
+    {regional_report.to_html(index=False)}
+
+    <h2>Supplier Performance</h2>
+    {supplier_report.to_html(index=False)}
+</body>
+</html>
+"""
+
+report_path = reports_dir / "sales_intelligence_report.html"
+report_path.write_text(html_report, encoding="utf-8")
+
+print("\nBusiness report generated:", report_path)
 
