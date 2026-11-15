@@ -15,6 +15,13 @@ def analyze_sales_by_product(df):
 
     return product_summary
 
+def analyze_purchases_by_supplier(df):
+    supplier_summary = df.groupby("supplier").agg(
+        total_quantity=("quantity", "sum"),
+        total_purchase_cost=("purchase_cost", "sum")
+    ).reset_index()
+
+    return supplier_summary
 
 
 # Read sales data
@@ -292,6 +299,13 @@ product_sales_report = analyze_sales_by_product(sales_df)
 
 print("\nPRODUCT SALES REPORT")
 print(product_sales_report)
+
+
+supplier_report = analyze_purchases_by_supplier(purchases_df)
+
+print("\nSUPPLIER PERFORMANCE REPORT")
+print(supplier_report)
+
 
 
 loss_making_products = product_financial_summary[
