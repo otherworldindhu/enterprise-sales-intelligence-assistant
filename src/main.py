@@ -10,11 +10,9 @@ from analysis import (
 )
 from reporting import generate_sales_report
 from visualization import generate_sales_charts
+from data_loader import load_business_data
 # Read sales data
-sales_df = pd.read_csv("data/sales.csv")
-
-# Read purchase data
-purchases_df = pd.read_csv("data/purchases.csv")
+sales_df, purchases_df = load_business_data()
 
 # Display sales data
 print("SALES DATA")
