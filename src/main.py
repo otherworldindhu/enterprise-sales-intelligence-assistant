@@ -302,3 +302,13 @@ total_gross_profit_margin = round(
 
 print("\nCOMPANY GROSS PROFIT MARGIN")
 print("Overall Margin:", total_gross_profit_margin, "%")
+
+product_overview = pd.merge(
+    sales_df,
+    purchases_df,
+    on="product",
+    how="inner"
+)
+
+print("\nPRODUCT OVERVIEW")
+print(product_overview.head())
