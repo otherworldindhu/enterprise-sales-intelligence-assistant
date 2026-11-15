@@ -242,3 +242,11 @@ product_financial_summary = pd.concat(
 
 print("\nPRODUCT FINANCIAL SUMMARY")
 print(product_financial_summary)
+
+product_financial_summary["gross_profit"] = (
+    product_financial_summary["revenue"]
+    - product_financial_summary["purchase_cost"]
+)
+
+print("\nPRODUCT PROFIT SUMMARY")
+print(product_financial_summary)
