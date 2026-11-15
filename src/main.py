@@ -7,6 +7,15 @@ def calculate_total_purchase_cost(df):
     total = (df["quantity"] * df["unit_price"]).sum()
     return total
 
+def analyze_sales_by_product(df):
+    product_summary = df.groupby("product").agg(
+        total_quantity=("quantity", "sum"),
+        total_revenue=("revenue", "sum")
+    ).reset_index()
+
+    return product_summary
+
+
 
 # Read sales data
 sales_df = pd.read_csv("data/sales.csv")
@@ -277,6 +286,13 @@ print("\nCOMPANY FINANCIAL SUMMARY")
 print("Total Revenue:", total_revenue)
 print("Total Purchase Cost:", total_purchase_cost)
 print("Total Gross Profit:", total_gross_profit)
+
+
+product_sales_report = analyze_sales_by_product(sales_df)
+
+print("\nPRODUCT SALES REPORT")
+print(product_sales_report)
+
 
 loss_making_products = product_financial_summary[
     product_financial_summary["gross_profit"] < 0
