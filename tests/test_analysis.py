@@ -60,3 +60,14 @@ def test_validate_business_data_rejects_missing_sales_column():
 
     with pytest.raises(ValueError, match="Sales data is missing columns"):
         validate_business_data(sales_df, purchases_df)
+
+def test_calculate_total_revenue_with_empty_dataframe():
+
+    sales_df = pd.DataFrame({
+        "quantity": [],
+        "unit_price": []
+    })
+
+    result = calculate_total_revenue(sales_df)
+
+    assert result == 0
